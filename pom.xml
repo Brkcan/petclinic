@@ -35,6 +35,15 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		 <dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		</dependency> 
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		</dependency>
+				
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
