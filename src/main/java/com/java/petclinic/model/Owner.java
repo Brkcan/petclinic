@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name = "t_owner")
+@XmlRootElement
 public class Owner {
 
 	@Id

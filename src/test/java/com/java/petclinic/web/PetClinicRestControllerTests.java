@@ -26,7 +26,7 @@ public class PetClinicRestControllerTests {
 	@Test
 	public void testDeleteOwner() {
 		
-		restTemplate.delete("http://localhost:8080/rest/owner/1");
+		restTemplate.delete("http://localhost:8080/rest/owner/2");
 	}
 	
 	@Test
@@ -40,7 +40,7 @@ public class PetClinicRestControllerTests {
 	
 	@Test
 	public void testCreateOwner() {
-		Owner owner = new Owner();
+		Owner owner = new Owner(); 
 		owner.setFirstName("Burak");
 		owner.setLastName("Can");
 		
