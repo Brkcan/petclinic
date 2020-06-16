@@ -9,7 +9,7 @@ public interface OwnerRepository {
 	
 	public List<Owner> findAll();
 	
-	public Owner finById(Long id);
+	public Owner findById(Long id);
 	
 	public List<Owner> findByLastName(String lastName);
 	

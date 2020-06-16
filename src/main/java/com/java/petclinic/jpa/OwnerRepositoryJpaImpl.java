@@ -11,7 +11,7 @@ import com.java.petclinic.dao.OwnerRepository;
 import com.java.petclinic.model.Owner;
 
 
-@Repository
+@Repository("ownerRepository")
 public class OwnerRepositoryJpaImpl implements OwnerRepository {
 
 	@PersistenceContext
@@ -23,7 +23,7 @@ public class OwnerRepositoryJpaImpl implements OwnerRepository {
 	}
 
 	@Override
-	public Owner finById(Long id) {
+	public Owner findById(Long id) {
 		return entityManager.find(Owner.class, id);
 	}
 

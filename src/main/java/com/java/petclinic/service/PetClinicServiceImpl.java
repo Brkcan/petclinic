@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.java.petclinic.dao.OwnerRepository;
+import com.java.petclinic.dao.PetRepository;
 import com.java.petclinic.exception.OwnerNotFoundException;
 import com.java.petclinic.model.Owner;
 
@@ -18,6 +19,12 @@ public class PetClinicServiceImpl implements PetClinicService {
 
 	private OwnerRepository ownerRepository;
 
+	private PetRepository petRepository;
+	
+	@Autowired
+	public void setPetRepository(PetRepository thePetRepository) {
+		petRepository = thePetRepository;
+	}
 	
 	@Autowired
 	public void setOwnerRepository(OwnerRepository ownerRepository) {
@@ -39,7 +46,7 @@ public class PetClinicServiceImpl implements PetClinicService {
 	@Override
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public Owner findOwner(Long id) throws OwnerNotFoundException {
-		Owner owner = ownerRepository.finById(id);
+		Owner owner = ownerRepository.findById(id);
 		if (owner == null)
 			throw new OwnerNotFoundException("owner not found with id  =  " + id);
 		return owner;
@@ -57,6 +64,7 @@ public class PetClinicServiceImpl implements PetClinicService {
 
 	@Override
 	public void delete(Long id) {
+		petRepository.deleteByOwnerId(id);
 		ownerRepository.delete(id);
 	}
 

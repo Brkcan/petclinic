@@ -34,7 +34,7 @@ public class Owner {
 
 	@OneToMany(mappedBy = "owner")
 	private Set<Pet> pets = new HashSet<Pet>();
-
+ 
 	public Long getId() {
 		return id;
 	}
