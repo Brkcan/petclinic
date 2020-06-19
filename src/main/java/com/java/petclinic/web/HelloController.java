@@ -19,6 +19,20 @@ public class HelloController {
 	@Autowired
 	private PetClinicService petClinicService;
 	
+	@RequestMapping("/login.html")
+	public ModelAndView login() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("login");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = {"/", "/index.html"})
+	public ModelAndView index() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index");
+		return mav;
+	}
+	
 	@RequestMapping(value = "/owners")
 	public ModelAndView getOwners() {
 		ModelAndView modelAndView = new ModelAndView();
