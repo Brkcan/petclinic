@@ -9,9 +9,10 @@
 </head>
 <body>
 <h1>PetClinic Login Page</h1>
-<form action="Login" method="post">
+<form action="login" method="post">
 	USERNAME: <input type="text" name="username"/><br />
 	PASSWORD: <input type="password" name="password"/><br />
+	Remember Me: <input name="remember-me" type="checkbox"/>
 	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
 	<input type="submit" value="Login"/>
 	<font>
